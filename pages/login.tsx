@@ -18,52 +18,60 @@ function Login() {
   return (
     <div className="page-container">
       <div className="login-container">
-        <h1>🔒 FitGuide Login</h1>
-        <p>Welcome back! Continue your fitness journey.</p>
-        <input
-          type="email"
-          placeholder="Enter your email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          style={{
-            width: "100%",
-            padding: "12px",
-            marginBottom: "15px",
-            borderRadius: "8px",
-            border: "2px solid #667eea",
-            fontSize: "14px",
-            outline: "none",
-          }}
-        />
-        <input
-          type="password"
-          placeholder="Enter your password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          style={{
-            width: "100%",
-            padding: "12px",
-            marginBottom: "25px",
-            borderRadius: "8px",
-            border: "2px solid #667eea",
-            fontSize: "14px",
-            outline: "none",
-          }}
-        />
+        <h1 className="login-title">Welcome</h1>
+        <p className="login-subtitle">Sign in to continue your fitness journey.</p>
+
         <button
-          className="login-btn"
-          onClick={handleLogin}
+          className="login-google-btn"
+          onClick={() => alert("Continue with Google (demo)")}
           disabled={loading}
-          style={{
-            opacity: loading ? 0.7 : 1,
-            cursor: loading ? "not-allowed" : "pointer",
-          }}
+          style={{ opacity: loading ? 0.7 : 1, cursor: loading ? "not-allowed" : "pointer" }}
         >
-          {loading ? "Signing in..." : "Sign In"}
+          <span className="login-google-icon" aria-hidden>
+            G
+          </span>
+          Continue with Google
         </button>
+
+
+        <div className="login-or">OR</div>
+
+        <div className="login-fields">
+          <input
+            className="login-field"
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            autoComplete="email"
+          />
+
+          <input
+            className="login-field"
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            autoComplete="current-password"
+          />
+
+          <button
+            className="login-btn"
+            onClick={handleLogin}
+            disabled={loading}
+            style={{
+              opacity: loading ? 0.7 : 1,
+              cursor: loading ? "not-allowed" : "pointer",
+              width: "100%",
+            }}
+          >
+            {loading ? "Signing in..." : "Sign In"}
+          </button>
+        </div>
       </div>
     </div>
   );
 }
 
 export default Login;
+
