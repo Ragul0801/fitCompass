@@ -1,0 +1,392 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  color: #333;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Navbar Styling */
+nav {
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  padding: 20px 40px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav h2 {
+  color: white;
+  font-size: 28px;
+  margin-bottom: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+nav div {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  cursor: pointer;
+}
+
+nav a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+nav a:active {
+  transform: translateY(0);
+}
+
+/* Page Container */
+.page-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Login Page */
+.login-container {
+  background: white;
+  border-radius: 16px;
+  padding: 60px 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  max-width: 500px;
+  margin: 80px auto;
+  text-align: center;
+}
+
+.login-container h1 {
+  color: #667eea;
+  font-size: 36px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.login-container p {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.login-btn {
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 14px 40px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.login-btn:active {
+  transform: translateY(0);
+}
+
+/* Signup Page */
+.signup-container {
+  background: white;
+  border-radius: 16px;
+  padding: 60px 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  max-width: 500px;
+  margin: 80px auto;
+  text-align: center;
+}
+
+.signup-container h1 {
+  color: #667eea;
+  font-size: 36px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.signup-container p {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.signup-btn {
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 14px 40px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.signup-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.signup-btn:active {
+  transform: translateY(0);
+}
+
+/* Dashboard */
+.dashboard-container {
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+}
+
+.dashboard-container h1 {
+  color: #667eea;
+  font-size: 40px;
+  margin-bottom: 40px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+/* Progress Card */
+.progress-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  padding: 30px;
+  color: white;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: left 0.3s ease;
+  z-index: 0;
+}
+
+.progress-card:hover::before {
+  left: 100%;
+}
+
+.progress-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.5);
+}
+
+.progress-card h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 1;
+}
+
+.progress-card p {
+  font-size: 48px;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+}
+
+/* Workout Card */
+.workout-card {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  border-radius: 12px;
+  padding: 25px;
+  color: white;
+  box-shadow: 0 10px 30px rgba(245, 87, 108, 0.3);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.workout-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: left 0.3s ease;
+  z-index: 0;
+}
+
+.workout-card:hover::before {
+  left: 100%;
+}
+
+.workout-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(245, 87, 108, 0.5);
+}
+
+.workout-card h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+}
+
+.workout-card p {
+  font-size: 14px;
+  margin: 8px 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Workout Page */
+.workout-container {
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.workout-container h1 {
+  color: #667eea;
+  font-size: 40px;
+  margin-bottom: 40px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.workouts-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+/* Buttons */
+button {
+  font-family: inherit;
+}
+
+button:active {
+  outline: none;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #667eea;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #764ba2;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav {
+    padding: 15px 20px;
+  }
+
+  nav h2 {
+    font-size: 22px;
+  }
+
+  nav div {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  .page-container {
+    padding: 0 15px;
+  }
+
+  .login-container,
+  .signup-container {
+    padding: 40px 20px;
+    margin: 40px auto;
+  }
+
+  .dashboard-container,
+  .workout-container {
+    padding: 20px;
+  }
+
+  .stats-grid,
+  .workouts-list {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 28px !important;
+  }
+}
